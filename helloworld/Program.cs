@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-
+        
         // 1. Napisz program w C#, który stworzy dwie zmienne int i sprawdzi czy są one równe czy nie.
         int a = 26;
         int b = 5;
@@ -96,11 +96,11 @@ internal class Program
         {
             Console.WriteLine("Masz " + age + ", możesz zatem zostać posłem, premierem, senatorem i prezydentem. Choć nie wszystkimi jednocześnie ;(");
         }
-        else if(age < 35 && age >= 30)
+        else if(age >= 30)
         {
             Console.WriteLine("Masz " + age + ", możesz zatem zostać posłem, premierem i senatorem. Choć nie wszystkimi jednocześnie ;(");
         }
-        else if(age < 30 && age>= 21) 
+        else if(age>= 21) 
         {
             Console.WriteLine("Masz " + age + ", możesz zatem zostać posłem i premierem. I to jednocześnie :)");
         }
@@ -157,7 +157,7 @@ internal class Program
         
         //6. Napisz program w C#, który pobierze wzrost użytkownika i przypisze mu wymyśloną kategorię wzrostu.
         
-        Console.WriteLine("Podaj swój wzrost w cm:");
+       Console.WriteLine("Podaj swój wzrost w cm:");
         string inputToll = Console.ReadLine();
         int toll = int.Parse(inputToll);
 
@@ -165,11 +165,11 @@ internal class Program
         {
             Console.WriteLine("Jesteś krasnoludem.");
         }
-        else if (150 <= toll && toll < 185)
+        else if (toll < 185)
         {
             Console.WriteLine("Jesteś średniaczkiem.");
         }
-        else if (185 <= toll && toll < 200)
+        else if (toll < 200)
         {
             Console.WriteLine("Jesteś drągalem.");
         }
@@ -213,19 +213,19 @@ internal class Program
         {
             Console.WriteLine("cholernie piździ");
         }
-        else if (cels >= 0 && cels < 10)
+        else if (cels < 10)
         {
             Console.WriteLine("zimno");
         }
-        else if (cels >= 10 && cels < 20)
+        else if (cels < 20)
          {
             Console.WriteLine("chłodno");
         }
-        else if (cels >= 20 && cels < 30)
+        else if (cels < 30)
         {
             Console.WriteLine("w sam raz");
         }
-        else if (cels >= 30 && cels < 40)
+        else if (cels < 40)
         {
             Console.WriteLine("zaczyna być słabo, bo gorąco");
         }
@@ -337,17 +337,26 @@ internal class Program
         double.TryParse(inputB, out b);
         Console.WriteLine("Podaj numer operacji do wykonania: \r\n1. Dodawanie \r\n2. Odejmowanie \r\n3. Mnożenie \r\n4. Dzielenie");
         string inputNum = Console.ReadLine();
-        double num = double.Parse(inputNum);
-        double result = num switch
+        int num = int.Parse(inputNum);
+
+        if(num == 4 && b == 0) 
         {
-            1 => a + b,
-            2 => a - b,
-            3 => a * b,
-            4 => a / b,
-        };
-        Console.WriteLine(result);
+            Console.WriteLine("Pamietaj cholero, nie dziel przez zero!");
+        }
+        else
+        {
+            double result = num switch
+            {
+                1 => a + b,
+                2 => a - b,
+                3 => a * b,
+                4 => a / b,
+            };
+            Console.WriteLine(result);
+        }
 
         
+
         // Z poprzednich zadań do ewentualnego ponownego użycia :)    
         /*Console.WriteLine("Imię:");
         string name = Console.ReadLine();
